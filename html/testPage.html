@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Test Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      div.contact {
+        border: 5px solid red;
+        margin: 5px;
+        padding: 5px;
+        width: 40%;
+      }
+
+      div.label {
+        display: inline;
+        font-weight: bold;
+      }
+
+      div.contact-name {
+        display: inline;
+      }
+
+      div.contact-phone {
+        display: inline;
+      }
+    </style>
+    <script>
+      function setAssertionText(text) {
+        document.querySelector('div#assertion').innerText = text
+      }
+
+      function enableElement(selector) {
+        document.querySelector(selector).enable
+      }
+
+      function showElement(selector) {
+        setTimeout(() => {
+          document.querySelector(selector).style = 'display:block;'
+        }, 5000)
+      }
+
+      function hideElement(selector) {
+        document.querySelector(selector).style = 'display:none;'
+      }
+
+      function addNewButton() {
+        const newBtnDiv = document.querySelector('div#new-button')
+        const newBtn = document.createElement('button')
+        newBtn.style = 'display:none;'
+        newBtn.onclick = () => {
+          setAssertionText('NEW BUTTON CLICKED')
+        }
+
+        newBtn.id = 'new-button'
+        newBtn.innerText = 'NEW BUTTON'
+        newBtnDiv.appendChild(newBtn)
+      }
+    </script>
+  </head>
+  <body>
+    <h1>TEST PAGE</h1>
+    <hr />
+    <div id="list">
+      <div class="contact">
+        <div class="name-container">
+          <div class="label">Name:</div>
+          <div class="contact-name">Captain Nemo</div>
+        </div>
+        <div class="phone-container">
+          <div class="label">Phone:</div>
+          <div class="contact-phone">111-111-1111</div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="name-container">
+          <div class="label">Name:</div>
+          <div class="contact-name">Jonny Blackbeard</div>
+        </div>
+        <div class="phone-container">
+          <div class="label">Phone:</div>
+          <div class="contact-phone">222-222-2222</div>
+        </div>
+      </div>
+      <div class="contact">
+        <div class="name-container">
+          <div class="label">Name:</div>
+          <div class="contact-name">Jack Sparrow</div>
+        </div>
+        <div class="phone-container">
+          <div class="label">Phone:</div>
+          <div class="contact-phone">333-333-3333</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
